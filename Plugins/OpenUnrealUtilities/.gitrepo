@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/JonasReich/OpenUnrealUtilities
+	branch = master
+	commit = ed5167bcf746a7233a5229900d464364abc824c2
+	parent = 80f15fd9439caa2cf05a71bb531bcfcb8d9e6394
+	method = merge
+	cmdver = 0.4.3
