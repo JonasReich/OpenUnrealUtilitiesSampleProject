@@ -39,9 +39,13 @@ $EditorTargetName = $ProjectName+"Editor"
 
 # Launch editor with tests
 $EditorTestArgs = @("-editor", "-editortest")
-$TestArgs = @("-unattended", "-buildmachine", "-stdout", "-nullrhi", "-nopause", "-nosplash")
+$TestArgs = @("-unattended", "-buildmachine", "-stdout", "-nullrhi", "-nopause", "-nosplash" )
 
 $ExtraTests = "OpenUnrealUtilities" # Fill from cmdline?
 $TestFilter = "$ProjectName+Project.Functional+$ExtraTests"
+
+$TestFilter = "$args"
 $RunTestCmdArg = "-ExecCmds=`"Automation RunTests Now $TestFilter;Quit`""
-#&$UE4EditorCmd "$UProjectPath" $EditorTestArgs $RunTestCmdArg $TestArgs
+$TestTimestamp = Get-Date -Format "yyyy-MM-dd-HH-mm"
+$TestReportPath = "$ScriptDirectory/TestReport-$TestTimestamp"
+&$UE4EditorCmd "$UProjectPath" $EditorTestArgs $RunTestCmdArg $TestArgs -ReportOutputPath="$TestReportPath"
