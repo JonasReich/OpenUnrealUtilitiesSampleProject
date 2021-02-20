@@ -99,10 +99,8 @@ public:
 	 */
 	void IncrementPatchVersion();
 
-	/**
-	 * If the prerelease version ends in digits
-	 */
-	bool TryIncrementPrereleaseVersion();
+	/** Increments the pre-release version, if it ends in digits */
+	bool TryIncrementPreReleaseVersion();
 
 	/**
 	 * @returns Is the precedence of the other version equal to this version.
@@ -133,4 +131,5 @@ public:
 
 private:
 	bool TryParseString_Internal(const FString & SourceString, ESemVerParsingStrictness Strictness);
+	bool ComparePrecedence_Internal(const FSemanticVersion& Other, bool bSmallerThan) const;
 };

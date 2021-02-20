@@ -43,12 +43,15 @@ public:
 
 	/**
 	 * Try to increment this pre-release identifier. Only works if the last identifier has only digits or is empty.
-	 * @returns if incrementing the pre-release was successful.
+	 * @returns if incrementing the pre-release was successful
 	 */
 	bool TryIncrement();
 
 	/** Does this pre-release identifier have the same value and precedence as the other one? */
 	bool operator==(const FSemVerPreReleaseIdentifier& Other) const;
+
+	/** Does this pre-release identifier have differing value or precedence as the other one? */
+	bool operator!=(const FSemVerPreReleaseIdentifier& Other) const;
 
 	/** Does this pre-release identifier have lower precedence than the other one? */
 	bool operator<(const FSemVerPreReleaseIdentifier& Other) const;
