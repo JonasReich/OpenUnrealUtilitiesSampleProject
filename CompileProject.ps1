@@ -44,8 +44,9 @@ $TestArgs = @("-unattended", "-buildmachine", "-stdout", "-nullrhi", "-nopause",
 $ExtraTests = "OpenUnrealUtilities" # Fill from cmdline?
 $TestFilter = "$ProjectName+Project.Functional+$ExtraTests"
 
-$TestFilter = "$args"
 $RunTestCmdArg = "-ExecCmds=`"Automation RunTests Now $TestFilter;Quit`""
 $TestTimestamp = Get-Date -Format "yyyy-MM-dd-HH-mm"
 $TestReportPath = "$ScriptDirectory/TestReport-$TestTimestamp"
-&$UE4EditorCmd "$UProjectPath" $EditorTestArgs $RunTestCmdArg $TestArgs -ReportOutputPath="$TestReportPath"
+Write-Output "Executing automation tests..."
+Write-Output "$UE4EditorCmd "$UProjectPath" $EditorTestArgs $RunTestCmdArg $TestArgs -ReportExportPath=`"$TestReportPath`""
+&$UE4EditorCmd "$UProjectPath" $EditorTestArgs $RunTestCmdArg $TestArgs -ReportExportPath="$TestReportPath"
