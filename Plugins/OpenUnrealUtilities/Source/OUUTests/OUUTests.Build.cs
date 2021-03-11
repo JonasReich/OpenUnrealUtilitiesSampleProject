@@ -17,7 +17,8 @@ public class OUUTests : ModuleRules
 			"UMG",
 
 			// Plugin
-			"OUURuntime"
+			"OUURuntime",
+			"GameplayTags"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[]
@@ -28,7 +29,9 @@ public class OUUTests : ModuleRules
 			"EditorScriptingUtilities",
 
 			// Plugin
-			"OUUBlueprintRuntime"
+			"OUUBlueprintRuntime",
+			"OUUUMG",
+			"OUUTestUtilities"
 		});
 	}
 }

@@ -1,10 +1,10 @@
 // Copyright (c) 2021 Jonas Reich
 
-#include "OUUTests.h"
+#include "OUUTestUtilities.h"
 
 #if WITH_AUTOMATION_WORKER
 
-#include "FlowControl/SequentialFrameScheduler.h"
+#include "SequentialFrameScheduler/SequentialFrameScheduler.h"
 
 class FTestTaskTarget
 {

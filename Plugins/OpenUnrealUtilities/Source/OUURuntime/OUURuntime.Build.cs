@@ -15,7 +15,8 @@ public class OUURuntime : ModuleRules
 			"Core",
 			"InputCore",
 			"UMG",
-			"SlateCore"
+			"SlateCore",
+			"GameplayTags"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[]
@@ -23,5 +24,15 @@ public class OUURuntime : ModuleRules
 			"HeadMountedDisplay",
 			"Slate"
 		});
+		
+		if (Target.bBuildDeveloperTools || (Target.Configuration != UnrealTargetConfiguration.Shipping && Target.Configuration != UnrealTargetConfiguration.Test))
+		{
+			PublicDependencyModuleNames.Add("GameplayDebugger");
+			PublicDefinitions.Add("WITH_GAMEPLAY_DEBUGGER=1");
+		}
+		else
+		{
+			PublicDefinitions.Add("WITH_GAMEPLAY_DEBUGGER=0");
+		}
 	}
 }
