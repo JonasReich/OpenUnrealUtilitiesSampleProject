@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/JonasReich/OpenUnrealUtilities
 	branch = develop
-	commit = 7afc837d2d6df6564eef0b92ce7490de217aafaa
-	parent = ea05cf7f50da6a41f924e24c181ab89494e519af
+	commit = 5b1a8b0110fc4f564f4e38dd230244ee97e91dea
+	parent = b7070a3ddc28772d0a360896597a9dc2fbe54a4d
 	method = merge
 	cmdver = 0.4.3
